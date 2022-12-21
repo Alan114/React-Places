@@ -6,7 +6,7 @@ import Modal from "../../shared/components/UIElements/Modal";
 import Map from "../../shared/components/UIElements/Map";
 import { AuthContext } from "../../shared/context/auth-context";
 
-const PlaceItem = props => {
+const PlaceItem = (props) => {
   const auth = useContext(AuthContext);
   const [showMap, setShowMap] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -35,7 +35,23 @@ const PlaceItem = props => {
         footer={<Button onClick={closeMapHandler}>CLOSE</Button>}
       >
         <div className="map-container">
-          <Map center={props.coordinates} zoom={16} />
+          {/* <Map center={props.coordinates} zoom={16} /> */}
+          <iframe
+            title="map"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            scrolling="no"
+            marginHeight="0"
+            marginWidth="0"
+            src={
+              "https://maps.google.com/maps?q=" +
+              props.coordinates.lat.toString() +
+              "," +
+              props.coordinates.lng.toString() +
+              "&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            }
+          ></iframe>
         </div>
       </Modal>
       <Modal
