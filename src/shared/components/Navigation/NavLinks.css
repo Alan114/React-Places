@@ -19,13 +19,14 @@
   color: #292929;
   text-decoration: none;
   padding: 0.5rem;
+  border-radius: 6px;
 }
 
 .nav-links a:hover,
 .nav-links a:active,
 .nav-links a.active {
-  background: #f8df00;
-  border-color: #292929;
+  background: gold;
+  /* border-color: #292929; */
   color: #292929;
 }
 
